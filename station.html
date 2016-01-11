@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="/css/vendor/material.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/vendor/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/js/vendor/material.min.js"></script>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+      <div class="mdl-layout__drawer"><span class="mdl-layout__title"></span>
+        <nav class="mdl-navigation"><a href="#" class="mdl-navigation__link">Favorited</a><a href="#" class="mdl-navigation__link">Channels</a><a href="#" class="mdl-navigation__link">Will</a><a href="#" class="mdl-navigation__link">Go</a><a href="#" class="mdl-navigation__link">Here</a></nav>
+      </div>
+      <main class="mdl-layout__content">
+        <form id="add">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="link" type="url" name="link" required="required" placeholder="https://www.youtube.com/watch?v=nky4me4NP70" class="mdl-textfield__input"/>
+            <label for="link" class="mdl-textfield__label">link</label>
+          </div>
+          <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Add</button>
+        </form>
+        <section class="section">
+          <div class="history">
+            <div></div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="queue mdl-shadow--4dp"><span class="title">Queue</span>
+            <ul></ul>
+          </div>
+          <div class="stream mdl-shadow--4dp"><span>Messages | Users<span class="user__count"> </span></span>
+            <ul></ul>
+          </div>
+        </section>
+        <div class="playlist">
+          <div></div>
+          </div>
+          <div class="player">
+          <div class="play">
+            <div class="controls">
+              <h2><i class="material-icons isPaused">play_arrow</i><i class="material-icons mute">volume_off</i><i class="material-icons fav">favorite</i><i class="material-icons veto">thumb_down</i>
+                <h4 class="volume"><i class="material-icons mute">volume_mute</i>
+                  <p id="volTip">
+                    <input type="range" min="0" max="100" value="50" step="1" class="mdl-slider mdl-js-slider volControl"/><span for="volTip" class="mdl-tooltip">50%</span>
+                  </p>
+                </h4>
+              </h2><span class="progress"></span>
+              <h4><span class="currentTime">00:00</span></h4>
+            </div>
+        </div>
+        <div class="buffer"></div>
+        </div>
+          <script src="https://radioroom-nathanbland.c9.io/socket.io/socket.io.js"></script>
+          <script src="/js/station.js"></script>
+      </main>
+    </div>
+  </body>
+</html>

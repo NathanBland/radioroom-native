@@ -1,0 +1,36 @@
+{
+  "name": "radioroom",
+  "version": "0.0.1",
+  "description": "Radio room native client ",
+  "main": "index.html",
+  "window": {
+    "title": "RadioRoom",
+    "toolbar": true,
+    "frame": true,
+    "resizable": true,
+    "position": "center",
+    "width": 800,
+    "height": 600
+  },
+  "repository": {
+    "url": "https://github.com/NathanBland/radioroom-native"
+  },
+  "scripts": {
+    "run": "nwbuild --run ./",
+    "win": "nwbuild -p win ./",
+    "linux": "nwbuild -p linux32,linux64 ./",
+    "osx": "nwbuild -p osx ./"
+  },
+  "author": {
+    "name": "Nathan Bland",
+    "url": "nathan.bland@gmail.com"
+  },
+  "dependencies": {
+    "node-webkit-builder": "*",
+    "socket.io": "^1.4.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-shell": "^0.2.5"
+  }
+}

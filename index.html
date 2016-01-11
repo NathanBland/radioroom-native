@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="/css/vendor/material.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/vendor/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/js/vendor/material.min.js"></script>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+      <div class="mdl-layout__drawer"><span class="mdl-layout__title"></span>
+        <nav class="mdl-navigation"><a href="#" class="mdl-navigation__link">Favorited</a><a href="#" class="mdl-navigation__link">Channels</a><a href="#" class="mdl-navigation__link">Will</a><a href="#" class="mdl-navigation__link">Go</a><a href="#" class="mdl-navigation__link">Here</a></nav>
+      </div>
+      <main class="mdl-layout__content">
+          <h1 class="landing__title"></h1>
+          <h4 class="landing__slogan">Listen with friends.</h4>
+          <form method="get" action="/station.html">
+            <label for="join">Join</label>
+            <input id="join" type="text" name="join" placeholder="Rocking-out" required="required"/>
+            <button>Submit</button>
+          </form>
+      </main>
+    </div>
+    <script type='text/javascript' src='/js/index.js'></script>
+    <script type='text/javascript' >
+    require('nw.gui').Window.get().showDevTools()
+    </script>
+  </body>
+</html>
