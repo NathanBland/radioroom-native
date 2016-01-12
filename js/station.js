@@ -27,8 +27,11 @@ var socket = io.connect('https://radioroom-nathanbland.c9.io')
     copy.classList.add('bounceIn')
     copy.classList.add('history__item')
     history.insertBefore(copy, history.firstChild)
-    cards[0].addEventListener('animationend', function (e) {
-      cards[0].remove()
+    cards[0].addEventListener('webkitAnimationEnd', function (e) {
+      // cards[0].remove()
+      var cards = document.querySelectorAll('.play .mdl-card')
+      console.log('(end) Cards after clear', cards)
+      cards[1].remove()
       // cards[1].classList.add('animated')
       // cards[1].classList.add('bounceIn')
     })
