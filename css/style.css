@@ -28,7 +28,8 @@ main.mdl-layout__content {
 
 section.section {
   display: flex;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  overflow-y: auto;}
 
 .mdl-card.mdl-shadow--4dp {
   margin: 1em;
@@ -55,7 +56,7 @@ section.section {
     max-width: 100%; }
 
 .stream {
-  flex: 1 1 auto;
+  flex: 1 1 45%;
   display: flex;
   flex-flow: column nowrap;
   padding: 1em;
@@ -99,7 +100,7 @@ section.section {
   top: .25em; }
 
 .queue {
-  flex: 1 1 auto;
+  flex: 1 1 45%;
   display: flex;
   flex-flow: column nowrap;
   padding: 1em;
@@ -163,7 +164,6 @@ section.section {
   display: flex;
   flex-flow: row wrap;
   height: 30vh;
-  overflow-y: auto;
   padding: 1em; }
   .history .mdl-card.mdl-shadow--4dp {
     min-height: 10vh; }

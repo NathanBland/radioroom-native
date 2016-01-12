@@ -1,5 +1,4 @@
 console.log('running.')
-var io = require('socket.io')
 var current = 0
 var currentStart = 0
 var player = {init: false, volume: 0.5, paused: false, muted: false}
@@ -7,8 +6,9 @@ var queryDict = {}
 location.search.substr(1).split('&').forEach(function (item) {
   queryDict[item.split('=')[0]] = item.split('=')[1]
 })
-var socket = io()
+var socket = io.connect('https://radioroom-nathanbland.c9.io')
   .on('connect', function () {
+    console.log('(conncet) Trying to join: /station/' + queryDict.join)
     socket.emit('join', '/station/' + queryDict.join)
   })
   .on('end', function (data) {
@@ -51,6 +51,15 @@ var socket = io()
       console.log('got current')
       pre(data.c.track)
       queue(data.c.track)
+      var options = {
+        body: data.c.track.j.title
+      }
+      var notification = new Notification("Song: ", options);
+      notification.onshow = function () {
+        setTimeout(function () {
+          notification.close();
+        }, 2000);
+      }
       window.setTimeout(function () {
         var playing = document.querySelectorAll('.player audio')
         var thumb = document.querySelector('.play .mdl-card')
@@ -87,6 +96,15 @@ var socket = io()
   .on('link', function (data) {
     console.log(data)
     queue(data)
+    var options = {
+      body: data.j.j.title
+    }
+    var notification = new Notification("Song: ", options);
+    notification.onshow = function () {
+      setTimeout(function () {
+        notification.close();
+      }, 2000);
+    }
   })
 
 var input = document.getElementsByTagName('input')[0]
@@ -95,11 +113,6 @@ var stream = document.querySelector('.stream ul')
 var form = document.getElementById('add')
 var timeDisplay = document.querySelector('.currentTime')
 var timeProgress = document.querySelector('.progress')
-
-var debug = document.createElement('p')
-debug.textContent = io
-
-stream.appendChild(debug)
 
 form.addEventListener('submit', function (e) {
   e.preventDefault()
