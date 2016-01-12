@@ -97,7 +97,7 @@ var socket = io.connect('https://radioroom-nathanbland.c9.io')
     console.log(data)
     queue(data)
     var options = {
-      body: data.j.j.title
+      body: data.j.j.title //test
     }
     var notification = new Notification("Song: ", options);
     notification.onshow = function () {
