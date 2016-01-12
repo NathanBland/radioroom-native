@@ -17,9 +17,9 @@
   },
   "scripts": {
     "run": "nwbuild -v 0.12.2 --run ./",
-    "win": "nwbuild -p win ./",
-    "linux": "nwbuild -p linux32,linux64 ./",
-    "osx": "nwbuild -p osx ./"
+    "win": "nwbuild -v 0.12.2 -p win ./",
+    "linux": "nwbuild -v 0.12.2 -p linux32,linux64 ./",
+    "osx": "nwbuild -v 0.12.2 -p osx ./"
   },
   "author": {
     "name": "Nathan Bland",
