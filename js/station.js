@@ -54,7 +54,7 @@ var socket = io.connect('https://radioroom-nathanbland.c9.io')
       var options = {
         body: data.c.track.j.title
       }
-      var notification = new Notification("Song: ", options);
+      var notification = new Notification("Now Playing: ", options);
       notification.onshow = function () {
         setTimeout(function () {
           notification.close();
@@ -99,7 +99,7 @@ var socket = io.connect('https://radioroom-nathanbland.c9.io')
     var options = {
       body: data.j.j.title //test
     }
-    var notification = new Notification("Song: ", options);
+    var notification = new Notification("Now Playing: ", options);
     notification.onshow = function () {
       setTimeout(function () {
         notification.close();
